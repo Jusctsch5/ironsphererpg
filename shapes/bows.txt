@@ -1,0 +1,5 @@
+the animation names are labeled:
+"drawback" 
+"hold"
+"release"
+they should be self-explanatory... =/

@@ -1,0 +1,89 @@
+//--- OBJECT WRITE BEGIN ---
+new GuiControl(RPGLoadingScreen) {
+	profile = "GuiDefaultProfile";
+	horizSizing = "right";
+	vertSizing = "bottom";
+	position = "0 0";
+	extent = "640 480";
+	minExtent = "8 8";
+	visible = "1";
+	hideCursor = "0";
+	bypassHideCursor = "0";
+	helpTag = "0";
+
+	new GuiChunkedBitmapCtrl(RPGLoadingPic) {
+		profile = "GuiContentProfile";
+		horizSizing = "right";
+		vertSizing = "bottom";
+		position = "0 0";
+		extent = "1024 600";
+		minExtent = "8 8";
+		visible = "1";
+		hideCursor = "0";
+		bypassHideCursor = "0";
+		helpTag = "0";
+		bitmap = "gui/loadingPictures/loadscreen3.png";
+		useVariable = "0";
+	};
+	new GuiMLTextCtrl(RPGLoadingTitle) {
+		profile = "ShellTextCenterProfile";
+		horizSizing = "center";
+		vertSizing = "height";
+		position = "-99 28";
+		extent = "837 58";
+		minExtent = "8 8";
+		visible = "1";
+		hideCursor = "0";
+		bypassHideCursor = "0";
+		helpTag = "0";
+		lineSpacing = "2";
+		allowColorChars = "0";
+		maxChars = "-1";
+		deniedSound = "InputDeniedSound";
+	};
+	new GuiProgressCtrl(RPGLoadingProgress) {
+		profile = "ShellProgressBarProfile";
+		horizSizing = "center";
+		vertSizing = "top";
+		position = "-44 423";
+		extent = "728 25";
+		minExtent = "8 8";
+		visible = "1";
+		hideCursor = "0";
+		bypassHideCursor = "0";
+		helpTag = "0";
+
+		new GuiTextCtrl(RPGLoadingProgressTxt) {
+			profile = "ShellProgressBarTextProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "1 3";
+			extent = "728 25";
+			minExtent = "8 8";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			helpTag = "0";
+			text = "LOADING... (esc to cancel)";
+			longTextBuffer = "0";
+			maxLength = "255";
+		};
+	};
+	new GuiMLTextCtrl(RPGLoadingCInfo) {
+		profile = "ShellTextCenterProfile";
+		horizSizing = "center";
+		vertSizing = "top";
+		position = "-99 455";
+		extent = "837 20";
+		minExtent = "8 8";
+		visible = "1";
+		hideCursor = "0";
+		bypassHideCursor = "0";
+		helpTag = "0";
+		lineSpacing = "2";
+		allowColorChars = "0";
+		maxChars = "-1";
+		deniedSound = "InputDeniedSound";
+	};
+};
+//--- OBJECT WRITE END ---

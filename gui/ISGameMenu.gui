@@ -1,0 +1,156 @@
+//--- OBJECT WRITE BEGIN ---
+new GuiControl(ISGameMenu) {
+	profile = "GuiDefaultProfile";
+	horizSizing = "center";
+	vertSizing = "center";
+	position = "0 0";
+	extent = "640 480";
+	minExtent = "8 8";
+	visible = "1";
+	hideCursor = "0";
+	bypassHideCursor = "0";
+	helpTag = "0";
+
+	new ShellPaneCtrl() {
+		profile = "ShellPaneProfile";
+		horizSizing = "center";
+		vertSizing = "center";
+		position = "104 62";
+		extent = "429 337";
+		minExtent = "48 92";
+		visible = "1";
+		hideCursor = "0";
+		bypassHideCursor = "0";
+		helpTag = "0";
+		text = "Menu";
+		longTextBuffer = "0";
+		maxLength = "255";
+		noTitleBar = "0";
+
+		new ShellScrollCtrl() {
+			profile = "NewScrollCtrlProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "12 23";
+			extent = "200 302";
+			minExtent = "24 24";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			helpTag = "0";
+			willFirstRespond = "1";
+			hScrollBar = "alwaysOn";
+			vScrollBar = "alwaysOn";
+			constantThumbHeight = "0";
+			defaultLineHeight = "15";
+			childMargin = "0 0";
+			fieldBase = "gui/shll_field";
+
+			new GuiScrollContentCtrl() {
+				profile = "GuiDefaultProfile";
+				horizSizing = "right";
+				vertSizing = "bottom";
+				position = "4 4";
+				extent = "176 278";
+				minExtent = "8 8";
+				visible = "1";
+				hideCursor = "0";
+				bypassHideCursor = "0";
+				helpTag = "0";
+
+				new ShellFancyTextList(ISPlayerList) {
+					profile = "ShellTextArrayProfile";
+					horizSizing = "right";
+					vertSizing = "bottom";
+					position = "0 0";
+					extent = "176 278";
+					minExtent = "8 20";
+					visible = "1";
+					helpTag = "0";
+					startScrollRegion = "3 0";
+					headerBitmap = "gui/server_tabs";
+					sortArrowBitmap = "gui/shll_sortarrow";
+					fieldBase = "gui/shll_field";
+					barBase = "gui/shll_bar";
+					glowOffset = "4";
+					rowHeight = "13";
+					headerFontType = "Univers Condensed";
+					headerFontSize = "16";
+					headerFontColor = "8 19 6 255";
+					headerFontColorHL = "25 68 56 255";
+					separatorColor = "192 192 192 255";
+					drawSeparators = "0";
+					headerSort = "1";
+					allowReposition = "0";
+		   			 noSelect = "0";
+				};
+			};
+		};
+		new ShellScrollCtrl() {
+			profile = "NewScrollCtrlProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "216 23";
+			extent = "200 276";
+			minExtent = "24 24";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			helpTag = "0";
+			willFirstRespond = "1";
+			hScrollBar = "alwaysOn";
+			vScrollBar = "alwaysOn";
+			constantThumbHeight = "0";
+			defaultLineHeight = "15";
+			childMargin = "0 0";
+			fieldBase = "gui/shll_field";
+
+			new GuiScrollContentCtrl() {
+				profile = "GuiDefaultProfile";
+				horizSizing = "right";
+				vertSizing = "bottom";
+				position = "4 4";
+				extent = "176 252";
+				minExtent = "8 8";
+				visible = "1";
+				hideCursor = "0";
+				bypassHideCursor = "0";
+				helpTag = "0";
+
+				new ShellTextList(isMenu) {
+					profile = "GuiDefaultProfile";
+					horizSizing = "right";
+					vertSizing = "bottom";
+					position = "0 0";
+					extent = "176 8";
+					minExtent = "8 8";
+					visible = "1";
+					hideCursor = "0";
+					bypassHideCursor = "0";
+					helpTag = "0";
+					enumerate = "0";
+					resizeCell = "1";
+					columns = "0";
+					fitParentWidth = "1";
+					clipColumnText = "0";
+				};
+			};
+		};
+		new ShellBitmapButton() {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "330 289";
+			extent = "90 38";
+			minExtent = "32 38";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			command = "ISGameMenu.onDone();";
+			helpTag = "0";
+			text = "Exit";
+			simpleStyle = "0";
+		};
+	};
+};
+//--- OBJECT WRITE END ---

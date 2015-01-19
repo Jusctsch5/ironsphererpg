@@ -1,0 +1,92 @@
+//--- OBJECT WRITE BEGIN ---
+new GuiControl(RPGEscapeMenu) {
+	profile = "DlgBackProfile";
+	horizSizing = "right";
+	vertSizing = "bottom";
+	position = "0 0";
+	extent = "640 480";
+	minExtent = "8 8";
+	visible = "1";
+	hideCursor = "0";
+	bypassHideCursor = "0";
+	helpTag = "0";
+
+	new ShellPaneCtrl() {
+		profile = "ShellPaneProfile";
+		horizSizing = "center";
+		vertSizing = "center";
+		position = "218 136";
+		extent = "203 208";
+		minExtent = "48 92";
+		visible = "1";
+		hideCursor = "0";
+		bypassHideCursor = "0";
+		helpTag = "0";
+		text = "MENU";
+		longTextBuffer = "0";
+		maxLength = "255";
+		noTitleBar = "0";
+
+		new ShellBitmapButton(RPGECreditsBtn) {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "32 73";
+			extent = "140 38";
+			minExtent = "32 38";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			command = "canvas.pushDialog(ISCredits);";
+			helpTag = "0";
+			text = "CREDITS";
+			simpleStyle = "0";
+		};
+		new ShellBitmapButton(RPGEOptionsBtn) {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "32 108";
+			extent = "140 38";
+			minExtent = "32 38";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			command = "Canvas.pushDialog(OptionsDlg);";
+			helpTag = "0";
+			text = "OPTIONS";
+			simpleStyle = "0";
+		};
+		new ShellBitmapButton(RPGEBackBtn) {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "32 39";
+			extent = "140 38";
+			minExtent = "32 38";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			command = "canvas.popDialog(RPGEscapeMenu);";
+			helpTag = "0";
+			text = "BACK TO GAME";
+			simpleStyle = "0";
+		};
+		new ShellBitmapButton(RPGELeaveGameBtn) {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "32 143";
+			extent = "140 38";
+			minExtent = "32 38";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			command = "lobbyDisconnect();";
+			helpTag = "0";
+			text = "LEAVE GAME";
+			simpleStyle = "0";
+		};
+	};
+};
+//--- OBJECT WRITE END ---

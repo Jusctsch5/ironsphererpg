@@ -1,0 +1,63 @@
+
+Audio \ Gui >
+
+buttonDown.wav		- Changes menu beeps to sword clang and swipe sounds.
+buttonOver.wav
+launchMenuOpen.wav
+
+command_hum.wav		- Removes digital sounds from inventory menus.
+command_off.wav
+command_on.wav
+inventory_hum.wav
+inventory_off.wav
+inventory_on.wav
+
+shell_hum.wav		- Replaces menu background hum with short drum beat from T1 Mino Lair.
+
+
+
+Interiors >
+
+is_minotaurlair.dif		- Minotaur's Lair prefab.
+is_minotaurshrine.dif		- Minotaur's Lair shrine, good condition.
+is_minotaurshrineruins.dif	- Minotaur's Lair shrine, ruined and overgrown.
+
+
+
+Scripts \ Autoexec >
+
+MinoEnvMaps.cs			- Runs code to give Minotaur lair textures reflection maps.
+
+
+
+Textures \ Gui >
+
+CUR_3darrow.png			- Menu mouse pointer.
+CUR_3darrowwait.png		- Menu mouse pointer when loading.
+Loading.png			- Image used when map image is not present.
+
+
+Textures \ MinoLair >
+
+All textures used in the Minotaur's Lair set of prefabs.
+
+
+
+Textures \ skins >
+
+AM_skin.png			- Male skin
+ammo_chaingun.png		- Lootbag skin
+ammo_disc.png			- Ore skin
+base.l/m/hbioderm.png		- Bioderm orc skins
+jetpack_bio.png			- Removes orc jetpack flare
+jetpackflare_bio.png		- Removes orc jetpack flare
+
+
+
+Textures \ special >
+
+flare.png			- Flare effect used in spell
+GameGrid.png			- Removes OOB image, despite T2 settings.
+ThornBolt.png			- Spell sprite
+ThornBoltCross.png		- Spell sprite
+blasterBolt.png			- Fixes glitch in blaster sprite (bolt)

@@ -1,0 +1,96 @@
+//--- OBJECT WRITE BEGIN ---
+new GuiControl(ISCredits) {
+	profile = "DlgBackProfile";
+	horizSizing = "right";
+	vertSizing = "bottom";
+	position = "0 0";
+	extent = "640 480";
+	minExtent = "8 8";
+	visible = "1";
+	hideCursor = "0";
+	bypassHideCursor = "0";
+	helpTag = "0";
+
+	new ShellPaneCtrl() {
+		profile = "ShellPaneProfile";
+		horizSizing = "center";
+		vertSizing = "center";
+		position = "105 16";
+		extent = "510 448";
+		minExtent = "48 92";
+		visible = "1";
+		hideCursor = "0";
+		bypassHideCursor = "0";
+		helpTag = "0";
+		text = "CREDITS";
+		longTextBuffer = "0";
+		maxLength = "255";
+		noTitleBar = "0";
+
+		new ShellScrollCtrl() {
+			profile = "NewScrollCtrlProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "26 35";
+			extent = "457 357";
+			minExtent = "24 24";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			helpTag = "0";
+			willFirstRespond = "1";
+			hScrollBar = "dynamic";
+			vScrollBar = "dynamic";
+			constantThumbHeight = "0";
+			defaultLineHeight = "15";
+			childMargin = "0 0";
+			fieldBase = "gui/shll_field";
+
+			new GuiScrollContentCtrl(ISCreditsText) {
+				profile = "GuiDefaultProfile";
+				horizSizing = "right";
+				vertSizing = "bottom";
+				position = "4 4";
+				extent = "433 349";
+				minExtent = "8 8";
+				visible = "1";
+				hideCursor = "0";
+				bypassHideCursor = "0";
+				helpTag = "0";
+
+				new GuiMLTextCtrl(ISCredits_Text) {
+					profile = "GuiTextBGCenterProfile";
+					horizSizing = "right";
+					vertSizing = "bottom";
+					position = "0 0";
+					extent = "432 809";
+					minExtent = "8 8";
+					visible = "1";
+					hideCursor = "0";
+					bypassHideCursor = "0";
+					helpTag = "0";
+					lineSpacing = "2";
+					allowColorChars = "0";
+					maxChars = "-1";
+					deniedSound = "InputDeniedSound";
+				};
+			};
+		};
+		new ShellBitmapButton() {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "348 395";
+			extent = "140 38";
+			minExtent = "32 38";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			command = "canvas.popDialog(ISCredits);";
+			helpTag = "0";
+			text = "CLOSE";
+			simpleStyle = "0";
+		};
+	};
+};
+//--- OBJECT WRITE END ---

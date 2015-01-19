@@ -1,0 +1,164 @@
+//--- OBJECT WRITE BEGIN ---
+new GuiControl(RPGInventoryScreen) {
+	profile = "GuiDefaultProfile";
+	horizSizing = "width";
+	vertSizing = "height";
+	position = "0 0";
+	extent = "640 480";
+	minExtent = "8 8";
+	visible = "1";
+	hideCursor = "0";
+	bypassHideCursor = "0";
+	helpTag = "0";
+
+	childGui = "RPGINV_Root";
+	Parent = "RPGINV_Root";
+
+	new ShellPaneCtrl(RPGINV_Root) {
+		profile = "ShellDlgPaneProfile";
+		horizSizing = "center";
+		vertSizing = "center";
+		position = "45 18";
+		extent = "550 443";
+		minExtent = "48 92";
+		visible = "1";
+		hideCursor = "0";
+		bypassHideCursor = "0";
+		helpTag = "0";
+		text = "Inventory";
+		longTextBuffer = "0";
+		maxLength = "255";
+		noTitleBar = "0";
+
+		new ShellBitmapButton() {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "426 391";
+			extent = "108 38";
+			minExtent = "32 38";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			command = "RPGInventoryScreen.onDone();";
+			helpTag = "0";
+			text = "DONE";
+			simpleStyle = "0";
+		};
+		new ShellBitmapButton() {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "111 392";
+			extent = "107 38";
+			minExtent = "32 38";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			command = "RPGInventoryScreen.onDrop();";
+			helpTag = "0";
+			text = "DROP";
+			simpleStyle = "0";
+		};
+		new ShellBitmapButton() {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "15 392";
+			extent = "109 38";
+			minExtent = "32 38";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			command = "RPGInventoryScreen.onUse();";
+			helpTag = "0";
+			text = "USE";
+			simpleStyle = "0";
+		};
+		new ShellScrollCtrl(InvScrollCtrl) {
+			profile = "NewScrollCtrlProfile";
+			horizSizing = "left";
+			vertSizing = "height";
+			position = "21 28";
+			extent = "321 368";
+			minExtent = "24 52";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			helpTag = "0";
+			willFirstRespond = "1";
+			hScrollBar = "alwaysOff";
+			vScrollBar = "alwaysOn";
+			constantThumbHeight = "0";
+			defaultLineHeight = "15";
+			childMargin = "0 3";
+			fieldBase = "gui/shll_field";
+
+			new GuiScrollContentCtrl(InvScroll) {
+				profile = "GuiDefaultProfile";
+				horizSizing = "right";
+				vertSizing = "bottom";
+				position = "4 7";
+				extent = "297 354";
+				minExtent = "8 8";
+				visible = "1";
+				hideCursor = "0";
+				bypassHideCursor = "0";
+				helpTag = "0";
+
+				new ShellTextList(InvList) {
+					profile = "ShellTextArrayProfile";
+					horizSizing = "right";
+					vertSizing = "bottom";
+					position = "0 0";
+					extent = "297 432";
+					minExtent = "8 8";
+					visible = "1";
+					hideCursor = "0";
+					bypassHideCursor = "0";
+					helpTag = "0";
+					enumerate = "1";
+					resizeCell = "1";
+					columns = "0";
+					fitParentWidth = "1";
+					clipColumnText = "0";
+
+					selectText = "Fine LongSword";
+				};
+			};
+		};
+		new GuiTextCtrl(coins) {
+			profile = "GuiDefaultProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "365 30";
+			extent = "100 38";
+			minExtent = "8 8";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			helpTag = "0";
+			longTextBuffer = "1";
+			maxLength = "2047";
+		};
+		new GuiMLTextCtrl(RPGInventoryTextBox) {
+			profile = "GuiDefaultProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "347 92";
+			extent = "167 14";
+			minExtent = "8 8";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			helpTag = "0";
+			lineSpacing = "2";
+			allowColorChars = "0";
+			maxChars = "-1";
+			deniedSound = "InputDeniedSound";
+		};
+	};
+};
+//--- OBJECT WRITE END ---
+
+

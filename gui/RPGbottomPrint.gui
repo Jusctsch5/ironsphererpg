@@ -1,0 +1,46 @@
+//--- OBJECT WRITE BEGIN ---
+new GuiControl(RPGbottomPrint) {
+	profile = "GuiDefaultProfile";
+	horizSizing = "center";
+	vertSizing = "bottom";
+	position = "0 0";
+	extent = "640 480";
+	minExtent = "8 8";
+	visible = "1";
+	hideCursor = "1";
+	bypassHideCursor = "0";
+	helpTag = "0";
+
+	pushed = "0";
+
+	new ShellFieldCtrl(RPGBPBackGround) {
+		profile = "ShellFieldProfile";
+		horizSizing = "center";
+		vertSizing = "relative";
+		position = "50 429";
+		extent = "540 50";
+		minExtent = "16 18";
+		visible = "1";
+		hideCursor = "1";
+		bypassHideCursor = "0";
+		helpTag = "0";
+
+		new GuiMLTextCtrl(RPGBPTXT) {
+			profile = "NewTextEditProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "5 5";
+			extent = "540 16";
+			minExtent = "8 8";
+			visible = "1";
+			hideCursor = "1";
+			bypassHideCursor = "0";
+			helpTag = "0";
+			lineSpacing = "2";
+			allowColorChars = "1";
+			maxChars = "90000";
+			deniedSound = "InputDeniedSound";
+		};
+	};
+};
+//--- OBJECT WRITE END ---

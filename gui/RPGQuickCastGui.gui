@@ -1,0 +1,622 @@
+//--- OBJECT WRITE BEGIN ---
+new GuiControl(RPGQuickCastGui) {
+	profile = "GuiDefaultProfile";
+	horizSizing = "right";
+	vertSizing = "bottom";
+	position = "0 0";
+	extent = "640 480";
+	minExtent = "8 2";
+	visible = "1";
+	hideCursor = "0";
+	bypassHideCursor = "0";
+	helpTag = "0";
+
+	hovertime = "1000";
+	isContainer = "1";
+	canSave = "1";
+	canSaveDynamicFields = "0";
+	Enabled = "1";
+
+	new ShellPaneCtrl() {
+		profile = "ShellDlgPaneProfile";
+		horizSizing = "right";
+		vertSizing = "bottom";
+		position = "97 119";
+		extent = "489 342";
+		minExtent = "48 92";
+		visible = "1";
+		hideCursor = "0";
+		bypassHideCursor = "0";
+		helpTag = "0";
+		text = "Quick Skill Use";
+		longTextBuffer = "0";
+		maxLength = "255";
+		noTitleBar = "0";
+
+		EdgeSnap = "1";
+		hovertime = "1000";
+		canMinimize = "0";
+		isContainer = "1";
+		resizeHeight = "0";
+		Padding = "0 0 0 0";
+		AnchorBottom = "0";
+		canMaximize = "0";
+		canSave = "1";
+		AnchorRight = "0";
+		canMove = "0";
+		canSaveDynamicFields = "0";
+		minSize = "50 50";
+		Margin = "0 0 0 0";
+		canClose = "0";
+		AnchorTop = "1";
+		AnchorLeft = "1";
+		Enabled = "1";
+		resizeWidth = "0";
+
+		new GuiTextCtrl() {
+			profile = "ShellTextProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "26 34";
+			extent = "66 22";
+			minExtent = "8 2";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			helpTag = "0";
+			text = "Select a Skill";
+			longTextBuffer = "1";
+			maxLength = "1024";
+
+			hovertime = "1000";
+			isContainer = "0";
+			Padding = "0 0 0 0";
+			AnchorBottom = "0";
+			canSave = "1";
+			AnchorRight = "0";
+			canSaveDynamicFields = "0";
+			Margin = "0 0 0 0";
+			AnchorTop = "1";
+			AnchorLeft = "1";
+			Enabled = "1";
+		};
+		new GuiTextCtrl() {
+			profile = "ShellTextProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "175 33";
+			extent = "83 22";
+			minExtent = "8 2";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			helpTag = "0";
+			text = "Select an Ability";
+			longTextBuffer = "1";
+			maxLength = "1024";
+
+			hovertime = "1000";
+			isContainer = "0";
+			Padding = "0 0 0 0";
+			AnchorBottom = "0";
+			canSave = "1";
+			AnchorRight = "0";
+			canSaveDynamicFields = "0";
+			Margin = "0 0 0 0";
+			AnchorTop = "1";
+			AnchorLeft = "1";
+			Enabled = "1";
+		};
+		new ShellBitmapButton(RQC_CloseButton) {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "364 252";
+			extent = "103 38";
+			minExtent = "32 38";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			command = "RPGQC_CloseGUI();";
+			helpTag = "0";
+			text = "Close";
+			simpleStyle = "0";
+
+			hovertime = "1000";
+			groupNum = "-1";
+			isContainer = "0";
+			useMouseEvents = "0";
+			canSave = "1";
+			buttonType = "PushButton";
+			Enabled = "1";
+		};
+		new ShellScrollCtrl() {
+			profile = "NewScrollCtrlProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "21 50";
+			extent = "149 168";
+			minExtent = "24 24";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			helpTag = "0";
+			willFirstRespond = "1";
+			hScrollBar = "alwaysOn";
+			vScrollBar = "alwaysOn";
+			constantThumbHeight = "0";
+			defaultLineHeight = "15";
+			childMargin = "0 0";
+			fieldBase = "gui/shll_field";
+
+			hovertime = "1000";
+			isContainer = "1";
+			canSave = "1";
+			Enabled = "1";
+
+			new GuiScrollContentCtrl() {
+				profile = "GuiDefaultProfile";
+				horizSizing = "right";
+				vertSizing = "bottom";
+				position = "4 4";
+				extent = "125 144";
+				minExtent = "8 8";
+				visible = "1";
+				hideCursor = "0";
+				bypassHideCursor = "0";
+				helpTag = "0";
+
+				new ShellTextList(RQC_PSkillList) {
+					profile = "ShellTextArrayProfile";
+					horizSizing = "right";
+					vertSizing = "bottom";
+					position = "0 0";
+					extent = "125 180";
+					minExtent = "8 2";
+					visible = "1";
+					hideCursor = "0";
+					bypassHideCursor = "0";
+					variable = "$RPGQCs::PrimaryAbilityStore";
+					helpTag = "0";
+					enumerate = "0";
+					resizeCell = "1";
+					columns = "0";
+					fitParentWidth = "1";
+					clipColumnText = "0";
+
+					hovertime = "1000";
+					isContainer = "1";
+					canSave = "1";
+					selectText = "Backstabbing";
+					Enabled = "1";
+				};
+			};
+		};
+		new ShellScrollCtrl() {
+			profile = "NewScrollCtrlProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "171 49";
+			extent = "141 169";
+			minExtent = "24 24";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			helpTag = "0";
+			willFirstRespond = "1";
+			hScrollBar = "alwaysOn";
+			vScrollBar = "alwaysOn";
+			constantThumbHeight = "0";
+			defaultLineHeight = "15";
+			childMargin = "0 0";
+			fieldBase = "gui/shll_field";
+
+			hovertime = "1000";
+			isContainer = "1";
+			canSave = "1";
+			Enabled = "1";
+
+			new GuiScrollContentCtrl() {
+				profile = "GuiDefaultProfile";
+				horizSizing = "right";
+				vertSizing = "bottom";
+				position = "4 4";
+				extent = "117 145";
+				minExtent = "8 8";
+				visible = "1";
+				hideCursor = "0";
+				bypassHideCursor = "0";
+				helpTag = "0";
+
+				new ShellTextList(RQC_SSkillList) {
+					profile = "ShellTextArrayProfile";
+					horizSizing = "right";
+					vertSizing = "bottom";
+					position = "0 0";
+					extent = "117 2";
+					minExtent = "8 2";
+					visible = "1";
+					hideCursor = "0";
+					bypassHideCursor = "0";
+					variable = "$RPGQCs::SecondaryAbilityStore";
+					helpTag = "0";
+					enumerate = "0";
+					resizeCell = "1";
+					columns = "0";
+					fitParentWidth = "1";
+					clipColumnText = "0";
+
+					hovertime = "1000";
+					isContainer = "1";
+					canSave = "1";
+					Enabled = "1";
+				};
+			};
+		};
+		new ShellBitmapButton(RQC_QuickBind1) {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "16 220";
+			extent = "80 38";
+			minExtent = "32 38";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			command = "RPGQC_UseBind1();";
+			helpTag = "0";
+			text = "Quick Bind 1";
+			simpleStyle = "0";
+
+			hovertime = "1000";
+			groupNum = "-1";
+			isContainer = "0";
+			useMouseEvents = "0";
+			canSave = "1";
+			buttonType = "PushButton";
+			Enabled = "1";
+		};
+		new ShellBitmapButton(RQC_QuickBind2) {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "17 252";
+			extent = "78 38";
+			minExtent = "32 38";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			command = "RPGQC_UseBind2();";
+			helpTag = "0";
+			text = "Quick Bind 2";
+			simpleStyle = "0";
+
+			hovertime = "1000";
+			groupNum = "-1";
+			isContainer = "0";
+			useMouseEvents = "0";
+			canSave = "1";
+			buttonType = "PushButton";
+			Enabled = "1";
+		};
+		new ShellBitmapButton(RQC_QuickBind3) {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "16 283";
+			extent = "80 38";
+			minExtent = "32 38";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			command = "RPGQC_UseBind3();";
+			helpTag = "0";
+			text = "Quick Bind 3";
+			simpleStyle = "0";
+
+			hovertime = "1000";
+			groupNum = "-1";
+			isContainer = "0";
+			useMouseEvents = "0";
+			canSave = "1";
+			buttonType = "PushButton";
+			Enabled = "1";
+		};
+		new ShellBitmapButton(RQC_QuickBind4) {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "86 220";
+			extent = "80 38";
+			minExtent = "32 38";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			command = "RPGQC_UseBind4();";
+			helpTag = "0";
+			text = "Quick Bind 4";
+			simpleStyle = "0";
+
+			hovertime = "1000";
+			groupNum = "-1";
+			isContainer = "0";
+			useMouseEvents = "0";
+			canSave = "1";
+			buttonType = "PushButton";
+			Enabled = "1";
+		};
+		new ShellBitmapButton(RQC_QuickBind5) {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "86 252";
+			extent = "80 38";
+			minExtent = "32 38";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			command = "RPGQC_UseBind5();";
+			helpTag = "0";
+			text = "Quick Bind 5";
+			simpleStyle = "0";
+
+			hovertime = "1000";
+			groupNum = "-1";
+			isContainer = "0";
+			useMouseEvents = "0";
+			canSave = "1";
+			buttonType = "PushButton";
+			Enabled = "1";
+		};
+		new ShellBitmapButton(RQC_QuickBind6) {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "86 283";
+			extent = "80 38";
+			minExtent = "32 38";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			command = "RPGQC_UseBind6();";
+			helpTag = "0";
+			text = "Quick Bind 6";
+			simpleStyle = "0";
+
+			hovertime = "1000";
+			groupNum = "-1";
+			isContainer = "0";
+			useMouseEvents = "0";
+			canSave = "1";
+			buttonType = "PushButton";
+			Enabled = "1";
+		};
+		new ShellBitmapButton(RQC_QuickBind7) {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "156 220";
+			extent = "80 38";
+			minExtent = "32 38";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			command = "RPGQC_UseBind7();";
+			helpTag = "0";
+			text = "Quick Bind 7";
+			simpleStyle = "0";
+
+			hovertime = "1000";
+			groupNum = "-1";
+			isContainer = "0";
+			useMouseEvents = "0";
+			canSave = "1";
+			buttonType = "PushButton";
+			Enabled = "1";
+		};
+		new ShellBitmapButton(RQC_QuickBind8) {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "156 252";
+			extent = "80 38";
+			minExtent = "32 38";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			command = "RPGQC_UseBind8();";
+			helpTag = "0";
+			text = "Quick Bind 8";
+			simpleStyle = "0";
+
+			hovertime = "1000";
+			groupNum = "-1";
+			isContainer = "0";
+			useMouseEvents = "0";
+			canSave = "1";
+			buttonType = "PushButton";
+			Enabled = "1";
+		};
+		new ShellBitmapButton(RQC_QuickBind9) {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "156 283";
+			extent = "80 38";
+			minExtent = "32 38";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			command = "RPGQC_UseBind9();";
+			helpTag = "0";
+			text = "Quick Bind 9";
+			simpleStyle = "0";
+
+			hovertime = "1000";
+			groupNum = "-1";
+			isContainer = "0";
+			useMouseEvents = "0";
+			canSave = "1";
+			buttonType = "PushButton";
+			Enabled = "1";
+		};
+		new ShellBitmapButton(RQC_QuickBind10) {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "227 220";
+			extent = "102 38";
+			minExtent = "32 38";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			command = "RPGQC_UseBind10();";
+			helpTag = "0";
+			text = "Quick Bind 10";
+			simpleStyle = "0";
+
+			hovertime = "1000";
+			groupNum = "-1";
+			isContainer = "0";
+			useMouseEvents = "0";
+			canSave = "1";
+			buttonType = "PushButton";
+			Enabled = "1";
+		};
+		new ShellScrollCtrl() {
+			profile = "NewScrollCtrlProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "316 48";
+			extent = "146 172";
+			minExtent = "24 24";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			helpTag = "0";
+			willFirstRespond = "1";
+			hScrollBar = "alwaysOn";
+			vScrollBar = "alwaysOn";
+			constantThumbHeight = "0";
+			defaultLineHeight = "15";
+			childMargin = "0 0";
+			fieldBase = "gui/shll_field";
+
+			hovertime = "1000";
+			isContainer = "1";
+			canSave = "1";
+			Enabled = "1";
+
+			new GuiScrollContentCtrl() {
+				profile = "GuiDefaultProfile";
+				horizSizing = "right";
+				vertSizing = "bottom";
+				position = "4 4";
+				extent = "122 148";
+				minExtent = "8 8";
+				visible = "1";
+				hideCursor = "0";
+				bypassHideCursor = "0";
+				helpTag = "0";
+
+				new ShellTextList(RQC_SlotList) {
+					profile = "ShellTextArrayProfile";
+					horizSizing = "right";
+					vertSizing = "bottom";
+					position = "0 0";
+					extent = "122 180";
+					minExtent = "8 2";
+					visible = "1";
+					hideCursor = "0";
+					bypassHideCursor = "0";
+					helpTag = "0";
+					enumerate = "0";
+					resizeCell = "1";
+					columns = "0";
+					fitParentWidth = "1";
+					clipColumnText = "0";
+
+					hovertime = "1000";
+					isContainer = "1";
+					canSave = "1";
+					selectText = "Quick Bind 3";
+					Enabled = "1";
+				};
+			};
+		};
+		new GuiTextCtrl() {
+			profile = "ShellTextProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "320 33";
+			extent = "58 22";
+			minExtent = "8 2";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			helpTag = "0";
+			text = "Quick Slots";
+			longTextBuffer = "1";
+			maxLength = "1024";
+
+			hovertime = "1000";
+			isContainer = "0";
+			Padding = "0 0 0 0";
+			AnchorBottom = "0";
+			canSave = "1";
+			AnchorRight = "0";
+			canSaveDynamicFields = "0";
+			Margin = "0 0 0 0";
+			AnchorTop = "1";
+			AnchorLeft = "1";
+			Enabled = "1";
+		};
+		new ShellBitmapButton(RQC_bindToSlot) {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "225 284";
+			extent = "103 38";
+			minExtent = "32 38";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			command = "RPGQC_BindToSlot();";
+			helpTag = "0";
+			text = "Bind To Slot";
+			simpleStyle = "0";
+
+			hovertime = "1000";
+			groupNum = "-1";
+			isContainer = "0";
+			useMouseEvents = "0";
+			canSave = "1";
+			buttonType = "PushButton";
+			Enabled = "1";
+		};
+		new ShellBitmapButton(RQC_useAbility) {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "226 252";
+			extent = "103 38";
+			minExtent = "32 38";
+			visible = "1";
+			hideCursor = "0";
+			bypassHideCursor = "0";
+			command = "RPGQC_UseAbility();";
+			helpTag = "0";
+			text = "Use Ability";
+			simpleStyle = "0";
+
+			hovertime = "1000";
+			groupNum = "-1";
+			isContainer = "0";
+			useMouseEvents = "0";
+			canSave = "1";
+			buttonType = "PushButton";
+			Enabled = "1";
+		};
+	};
+};
+//--- OBJECT WRITE END ---

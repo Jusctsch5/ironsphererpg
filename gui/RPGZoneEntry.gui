@@ -1,0 +1,65 @@
+//--- OBJECT WRITE BEGIN ---
+new GuiControl(RPGZoneEntry) {
+	profile = "GuiModelessDialogProfile";
+	horizSizing = "right";
+	vertSizing = "bottom";
+	position = "0 0";
+	extent = "640 480";
+	minExtent = "8 8";
+	visible = "1";
+	hideCursor = "1";
+	bypassHideCursor = "0";
+	helpTag = "0";
+
+	dSch = "200174";
+
+	new GuiMLTextCtrl(RPGZoneEntryTitle) {
+		profile = "GuiTextBGCenterProfile";
+		horizSizing = "center";
+		vertSizing = "top";
+		position = "148 77";
+		extent = "343 20";
+		minExtent = "8 8";
+		visible = "1";
+		hideCursor = "0";
+		bypassHideCursor = "0";
+		helpTag = "0";
+		lineSpacing = "2";
+		allowColorChars = "0";
+		maxChars = "-1";
+		deniedSound = "InputDeniedSound";
+	};
+	new GuiMLTextCtrl(RPGZoneEntryText) {
+		profile = "GuiTextProfile";
+		horizSizing = "center";
+		vertSizing = "top";
+		position = "148 98";
+		extent = "343 29";
+		minExtent = "8 8";
+		visible = "1";
+		hideCursor = "0";
+		bypassHideCursor = "0";
+		helpTag = "0";
+		lineSpacing = "2";
+		allowColorChars = "1";
+		maxChars = "-1";
+		deniedSound = "InputDeniedSound";
+	};
+	new GuiMLTextCtrl(RPGZoneEntryInfo) {
+		profile = "GuiTextProfile";
+		horizSizing = "center";
+		vertSizing = "top";
+		position = "148 132";
+		extent = "343 16";
+		minExtent = "8 8";
+		visible = "1";
+		hideCursor = "0";
+		bypassHideCursor = "0";
+		helpTag = "0";
+		lineSpacing = "2";
+		allowColorChars = "1";
+		maxChars = "-1";
+		deniedSound = "InputDeniedSound";
+	};
+};
+//--- OBJECT WRITE END ---

@@ -1,0 +1,103 @@
+================================================================================
+
+  Welcome and thank you for playing our Tribes2 IronSphere Total Conversion Modification!
+
+  Below is a valued list to all who have contributed to the modification.
+================================================================================
+
++++++++++++++++++++++++++++++++++
+
+Third Team (Currently)
+--------------------------
+Project Lead/Coordinator
+   -Shinji
+
+Co-Project Leads
+   -Halodub
+   -Lithiumrain
+
+Scripting
+   -Shinji
+   -Halodub
+   -DarkDragonDX (Nyoka)
+
+Testers
+   -kmjn
+   -Minehem
+
++++++++++++++++++++++++++++++++++
+
+*********************************
+Second Team:
+-------------
+Project Leads
+   -shinji
+   -Thalagyrt
+
+Co-Project Lead
+    -Phantom139
+    
+Scripting
+    -KeyboardCat(Signal360)
+    -Thalagyrt
+    -Tricon2 Elf
+    -Phantom139
+    -shinji
+    -DarkDragonDX (Nyoka)
+    
+Artists
+    -Zaxxman 	 =Modeller
+    -Tricon2 Elf =Textures
+    -GADGET44	 =Textures
+    
+Mapping
+    -shinji
+    
+Testers
+    -Castiger
+    -ChuckConnors
+    -Chutriel
+    -Damaso
+    -Drakethesly
+    -FURB
+    -Iplop
+    -LLJKH
+    -m31ster
+    -MightyZuex
+    -Noodude
+    -Zipperdude
+********************************* 
+
+90% OF THE CREDIT GOES TO THESE GUYS AS OF 1.41
+v v v v v v v v vv v v v v v v v v
+First & Original Developing Team:
+-------------
+
+Goodie - WorldCraft Modeller
+Gul'Dar - WorldCraft Modeller and Mapper
+HiVoltage - Modeller
+JeremyIrons - Original Creator
+Lone Predator - Skinner
+Scourage - Coder
+SoulSlayer - WorldCraft Modeller
+Trident_RX - Head Coder, Creator
+Toaster - Documentation
+Twister - WorldCraft Modeller
+Fina - Head Mapper, Worldcraft Modeller
+Sirsteven - Lead Tester
+Jardin De Cecile - Music Score
+
+-------------
+
+Sierra On-Line, Inc. owns the copyright to Tribes2.
+Trident_RX, DEV Team, and any associates claim the copyright
+to this Modification (the "mod"), and any derivative works of this mod.
+By using this mod you must agree with the end user license agreement ("EULA.txt")
+
+LIMITATION OF LIABILITY. NO ONE SHALL BE LIABLE IN ANY WAY FOR LOSS OR
+DAMAGE OF ANY KIND RESULTING FROM THE USE OF THE MOD
+INCLUDING, BUT NOT LIMITED TO, LOSS OF GOODWILL, WORK STOPPAGE,
+COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER COMMERCIAL
+DAMAGES OR LOSSES.
+
+USE AT YOUR OWN RISK.

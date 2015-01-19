@@ -1,0 +1,262 @@
+//--- OBJECT WRITE BEGIN ---
+new GuiControl(RPGadminScreen) {
+	profile = "GuiDefaultProfile";
+	horizSizing = "width";
+	vertSizing = "height";
+	position = "0 0";
+	extent = "640 480";
+	minExtent = "8 8";
+	visible = "1";
+	helpTag = "0";
+
+	new ShellPaneCtrl(RPGADMIN_Root) {
+		profile = "ShellDlgPaneProfile";
+		horizSizing = "center";
+		vertSizing = "center";
+		position = "4 11";
+		extent = "631 457";
+		minExtent = "48 92";
+		visible = "1";
+		helpTag = "0";
+		text = "Admin Controls";
+		maxLength = "255";
+		noTitleBar = "0";
+
+		new ShellBitmapButton() {
+			profile = "ShellButtonProfile";
+			horizSizing = "relative";
+			vertSizing = "relative";
+			position = "20 401";
+			extent = "108 38";
+			minExtent = "32 38";
+			visible = "1";
+			command = "RPGadminScreen.onDone();";
+			helpTag = "0";
+			text = "CLOSE";
+			simpleStyle = "0";
+		};
+		new ShellBitmapButton() {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "536 34";
+			extent = "68 38";
+			minExtent = "32 38";
+			visible = "1";
+                        command = "RPGadminScreen.onDrop();";
+			helpTag = "0";
+			text = "add item";
+			simpleStyle = "0";
+		};
+		new ShellBitmapButton() {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "274 402";
+			extent = "85 38";
+			minExtent = "32 38";
+			visible = "1";
+                        command = "RPGadminScreen.onUse();";
+			helpTag = "0";
+			text = "delete item";
+			simpleStyle = "0";
+		};
+		new ShellScrollCtrl() {
+			profile = "NewScrollCtrlProfile";
+			horizSizing = "relative";
+			vertSizing = "relative";
+			position = "24 34";
+			extent = "252 193";
+			minExtent = "24 52";
+			visible = "1";
+			helpTag = "0";
+			willFirstRespond = "1";
+			hScrollBar = "alwaysOff";
+			vScrollBar = "alwaysOn";
+			constantThumbHeight = "0";
+			defaultLineHeight = "15";
+			childMargin = "0 3";
+			fieldBase = "gui/shll_field";
+
+			new GuiScrollContentCtrl() {
+				profile = "GuiDefaultProfile";
+				horizSizing = "right";
+				vertSizing = "bottom";
+				position = "4 7";
+				extent = "228 179";
+				minExtent = "8 8";
+				visible = "1";
+				helpTag = "0";
+
+				new ShellTextList(ClientList) {
+					profile = "ShellTextArrayProfile";
+					horizSizing = "right";
+					vertSizing = "bottom";
+					position = "0 0";
+					extent = "129 8";
+					minExtent = "8 8";
+					visible = "1";
+					helpTag = "0";
+					enumerate = "1";
+					resizeCell = "1";
+					columns = "0";
+					fitParentWidth = "1";
+					clipColumnText = "0";
+				};
+			};
+		};
+		new ShellScrollCtrl() {
+			profile = "NewScrollCtrlProfile";
+			horizSizing = "relative";
+			vertSizing = "relative";
+			position = "277 73";
+			extent = "324 328";
+			minExtent = "24 52";
+			visible = "1";
+			helpTag = "0";
+			willFirstRespond = "1";
+			hScrollBar = "alwaysOff";
+			vScrollBar = "alwaysOn";
+			constantThumbHeight = "0";
+			defaultLineHeight = "15";
+			childMargin = "0 3";
+			fieldBase = "gui/shll_field";
+
+			new GuiScrollContentCtrl() {
+				profile = "GuiDefaultProfile";
+				horizSizing = "right";
+				vertSizing = "bottom";
+				position = "4 7";
+				extent = "300 314";
+				minExtent = "8 8";
+				visible = "1";
+				helpTag = "0";
+
+                                new ShellTextList(AdminInventoryList) {
+					profile = "ShellTextArrayProfile";
+					horizSizing = "right";
+					vertSizing = "bottom";
+					position = "0 0";
+					extent = "262 8";
+					minExtent = "8 8";
+					visible = "1";
+					helpTag = "0";
+					enumerate = "1";
+					resizeCell = "1";
+					columns = "0";
+					fitParentWidth = "1";
+					clipColumnText = "0";
+				};
+			};
+		};
+		new GuiTextCtrl() {
+			profile = "GuiDefaultProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "403 410";
+			extent = "132 18";
+			minExtent = "8 8";
+			visible = "1";
+			helpTag = "0";
+			text = "Blah";
+			maxLength = "255";
+		};
+		new ShellBitmapButton() {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "19 225";
+			extent = "95 38";
+			minExtent = "32 38";
+			visible = "1";
+			helpTag = "0";
+			text = "kick player";
+			simpleStyle = "0";
+		};
+		new ShellBitmapButton() {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "103 225";
+			extent = "95 38";
+			minExtent = "32 38";
+			visible = "1";
+			helpTag = "0";
+			text = "ban player";
+			simpleStyle = "0";
+		};
+		new ShellBitmapButton() {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "186 225";
+			extent = "95 38";
+			minExtent = "32 38";
+			visible = "1";
+			helpTag = "0";
+			text = "#fell";
+			simpleStyle = "0";
+		};
+		new ShellBitmapButton() {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "19 254";
+			extent = "95 38";
+			minExtent = "32 38";
+			visible = "1";
+			helpTag = "0";
+			text = "#forcespawn";
+			simpleStyle = "0";
+		};
+		new ShellBitmapButton() {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "103 254";
+			extent = "95 38";
+			minExtent = "32 38";
+			visible = "1";
+			helpTag = "0";
+			text = "#eyes";
+			simpleStyle = "0";
+		};
+		new ShellBitmapButton() {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "186 254";
+			extent = "95 38";
+			minExtent = "32 38";
+			visible = "1";
+			helpTag = "0";
+			text = "#possess";
+			simpleStyle = "0";
+		};
+		new ShellBitmapButton() {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "19 283";
+			extent = "95 38";
+			minExtent = "32 38";
+			visible = "1";
+			helpTag = "0";
+			text = "#teleport2";
+			simpleStyle = "0";
+		};
+		new ShellBitmapButton() {
+			profile = "ShellButtonProfile";
+			horizSizing = "right";
+			vertSizing = "bottom";
+			position = "103 283";
+			extent = "95 38";
+			minExtent = "32 38";
+			visible = "1";
+			helpTag = "0";
+			text = "#kill";
+			simpleStyle = "0";
+		};
+	};
+};
+//--- OBJECT WRITE END ---

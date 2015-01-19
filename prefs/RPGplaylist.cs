@@ -1,0 +1,17 @@
+$music::fileBalanVillage_0 = "Balan_Village";
+$music::fileDarkForest_0 = "earth_loop";
+$music::fileDarkFortress_0 = "Evil_loop";
+$music::fileDarkTown_0 = "Town1_loop";
+$music::fileEvilTown_0 = "dungeon5_loop";
+$music::fileLivelyTown_0 = "Town3_loop";
+$music::fileMines_0 = "mines_loop";
+$music::fileMines_1 = "dungeon4_loop";
+$music::fileMines_2 = "dungeon2_loop";
+$music::fileMines_3 = "Evil_loop";
+$music::filePortTown_0 = "good_loop";
+$music::fileSoftTown_0 = "Town2_loop";
+$music::fileTlajicMines_0 = "Tlajic_Mines";
+$music::fileWilderness_0 = "misc1";
+$music::fileWilderness_1 = "misc2";
+$music::fileWilderness_2 = "misc3";
+$music::fileWilderness_3 = "misc4";
