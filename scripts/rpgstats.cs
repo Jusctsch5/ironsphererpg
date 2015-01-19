@@ -352,7 +352,7 @@ function DistributeExpForKilling(%damagedClient)
 				%pvalue = round(%final * (1.0 * (%pf * 0.1)));
 			else
 				%pvalue = 0;
-			%final = round(%final/2);
+			%final = round(%final/1.5);
 			storeData(%listClientId, "EXP", %final, "inc");
 			if(%final > 0)
 				messageClient(%listClientId, 'DistributeExp', $MsgBlue @ %dname @ " has died and you gained " @ %final @ " experience!");
