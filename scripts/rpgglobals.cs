@@ -1,5 +1,5 @@
 if($initlck $= "") $initlck = 14;
-if($SPgainedPerLevel $= "") $SPgainedPerLevel = 30;
+if($SPgainedPerLevel $= "") $SPgainedPerLevel = 45;
 if($initSPcredits $= "") $initSPcredits = 60;
 if($autoStartupSP $= "") $autoStartupSP = 1;	//for each skill
 if($initbankcoins $= "") $initbankcoins = 2500;
