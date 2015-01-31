@@ -1,5 +1,10 @@
 
 # Exclude all characters
 characters/
+
+# Exclude Client, Server, and other preferences files
+prefs/
+
 # Exclude Java's object files
 *.dso
+*.cs.do
