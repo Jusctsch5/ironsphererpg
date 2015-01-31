@@ -1,0 +1,5 @@
+
+# Exclude all characters
+characters/
+# Exclude Java's object files
+*.dso
