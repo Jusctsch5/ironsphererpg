@@ -72,13 +72,13 @@ datablock PlayerData(MaleHumanArmor) : LightPlayerDamageProfile
 	runForce = 48 * 120 *2;
 	runEnergyDrain = 0.005;
 	minRunEnergy = 0.0;
-	maxForwardSpeed = 10;
-	maxBackwardSpeed = 9;
-	maxSideSpeed = 9;
+	maxForwardSpeed = 20;
+	maxBackwardSpeed = 18;
+	maxSideSpeed = 18;
 
-	maxUnderwaterForwardSpeed = 6;
-	maxUnderwaterBackwardSpeed = 5.4;
-	maxUnderwaterSideSpeed = 5.4;
+	maxUnderwaterForwardSpeed = 15;
+	maxUnderwaterBackwardSpeed = 12;
+	maxUnderwaterSideSpeed = 12;
 
 	jumpForce = 6 * 90;
 	jumpEnergyDrain = 0;
