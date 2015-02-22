@@ -677,9 +677,8 @@ $SkillRestriction[Guildteleport] = $Skill::NeutralCasting @ " 20";
 $SkillRestriction[AdvGuildteleport] = $Skill::NeutralCasting @ " 260";
 $SkillRestriction[transport] = $Skill::NeutralCasting @ " 200";
 $SkillRestriction[advtransport] = $Skill::NeutralCasting @ " 350";
-//$SkillRestriction[remort] = $Skill::NeutralCasting @ " 0 " @ $MinLevel @ " 101";
-//$SkillRestriction[mimic] = $Skill::NeutralCasting @ " 145 " @ $MinRemort @ " 2";
 $SkillRestriction[masstransport] = $Skill::NeutralCasting @ " 650";
+$SkillRestriction[flow] = $Skill::NeutralCasting @ " 50";
 
 $SkillRestriction[heal] = $Skill::DefensiveCasting @ " 10";
 $SkillRestriction[strongheal] = $Skill::DefensiveCasting @ " 80";

@@ -539,6 +539,20 @@ $spelldata[AdvGuildTeleport, Cost] = 10;
 $spelldata[AdvGuildTeleport, Function] = "DoSpellGuildTeleportLOS";
 $spelldata[AdvGuildTeleport, Skill] = $Skill::NeutralCasting;
 
+$spelldata[Flow, Image] = HealAuraEmitter2;
+$spelldata[Flow, DamageMod] = "";
+$spelldata[Flow, NumEffect] = "10";
+$spelldata[Flow, Test] = 1;
+$spelldata[Flow, Delay] = 1500;
+$spelldata[Flow, Element] = "Generic";
+$spelldata[Flow, RecoveryTime] = 4000;
+$spelldata[Flow, Type] = Emitter;
+$spelldata[Flow, cost] = 15; // should be 15
+$spelldata[Flow, Duration] = 60000;
+$spelldata[Flow, Special] = "Flow";
+$spelldata[Flow, Function] = "DoFlowSpellCast";
+$spelldata[Flow, Skill] = $Skill::NeutralCasting;
+
 //Element to stat bonus declaration:
 $Spell::ElementResistance[Fire] = 13;//Fire Resistance format x where x is a number.
 $Spell::ElementResistance[Water] = 14;
@@ -1545,4 +1559,52 @@ function DoSpellGuildTeleportLOS(%client, %spell, %sdata, %params)
 		MessageClient(%client, 'Teleport Fail', "No such destination, or your guild does not own that territory.");
 	}	
 
+}
+
+function DoFlowSpellCast(%client, %spell, %sdata, %params)
+{
+      // Make sure an existing flow isn't active.
+      if (%client.flowActive == true)
+      {
+        return;
+      }
+      
+      %client.flowActive = true;
+      
+      // Create the 'cast spell' image on the player
+      %pos = %client.player.getPosition();
+      %em = createEmitter(%pos, $spelldata[%sdata, Image], "0 0 0");
+      schedule(1000, 0, "removeExpo", %em);
+      
+      // Calculate the increase in speed based on the NeutralCasting proficency of the caster.
+      %client.flowIncrease = $spelldata[%sdata, numEffect] + (%client.data.PlayerSkill[$skill::NeutralCasting] / 10);
+      echo("Casting Flow, increasing speed by" SPC %client.flowIncrease);
+      %increase = %client.flowIncrease;
+      %client.player.getDataBlock().maxForwardSpeed += %increase;
+      %client.player.getDataBlock().maxBackwardSpeed += %increase;
+      %client.player.getDataBlock().maxSideSpeed += %increase;
+      %client.player.getDataBlock().maxUnderwaterForwardSpeed += %increase;
+      %client.player.getDataBlock().maxUnderwaterBackwardSpeed += %increase;
+      %client.player.getDataBlock().maxUnderwaterSideSpeed += %increase;
+      
+      // Update that skill had been successfully cast
+      UseSkill(%client, $skill::NeutralCasting, true, true, 1, false);
+      
+      // Set end of skill to terminate bonuses, want to close it slightly before.
+      %duration = $spelldata[%sdata, duration] - (1 * 1000);
+      schedule(%duration, %client, "EndFlow", %client);
+}
+function EndFlow(%client)
+{
+      echo("Flow ending, decreasing speed by" SPC %client.flowIncrease);
+      
+      %decrease = 0 - %client.flowIncrease;
+      %client.player.getDataBlock().maxForwardSpeed += %decrease;
+      %client.player.getDataBlock().maxBackwardSpeed += %decrease;
+      %client.player.getDataBlock().maxSideSpeed += %decrease;
+      %client.player.getDataBlock().maxUnderwaterForwardSpeed += %decrease;
+      %client.player.getDataBlock().maxUnderwaterBackwardSpeed += %decrease;
+      %client.player.getDataBlock().maxUnderwaterSideSpeed += %decrease;
+      
+      %client.flowActive = false;
 }
