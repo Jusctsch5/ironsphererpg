@@ -65,7 +65,7 @@ datablock PlayerData(MaleHumanArmor) : LightPlayerDamageProfile
 	underwaterJetForce = 26.21 * 100 * 1.5;//swiming?
 	underwaterVertJetFactor = 10000.0;
 	jetEnergyDrain =  0.0;
-	underwaterJetEnergyDrain = 0.06;
+	underwaterJetEnergyDrain = 0.00;
 	minJetEnergy = 1.0;
 	maxJetHorizontalPercentage = 10.0;
 
