@@ -1593,7 +1593,7 @@ function DoFlowSpellCast(%client, %spell, %sdata, %params)
       schedule(1000, 0, "removeExpo", %em);
       
       // Calculate the increase in speed based on the NeutralCasting proficency of the caster.
-      %client.flowIncrease = $spelldata[%sdata, numEffect] + (%client.data.PlayerSkill[$skill::NeutralCasting] / 10);
+      %client.flowIncrease = $spelldata[%sdata, numEffect] + (%client.data.PlayerSkill[$skill::NeutralCasting] / 20);
       echo("Casting Flow, increasing speed by" SPC %client.flowIncrease);
       %increase = %client.flowIncrease;
       %client.player.getDataBlock().maxForwardSpeed += %increase;
