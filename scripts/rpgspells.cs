@@ -1581,6 +1581,7 @@ function DoFlowSpellCast(%client, %spell, %sdata, %params)
       // Make sure an existing flow isn't active.
       if (%client.flowActive == true)
       {
+        restoreMANA($spelldata[%sdata, Cost]); 
         return;
       }
       
@@ -1604,7 +1605,7 @@ function DoFlowSpellCast(%client, %spell, %sdata, %params)
       %client.player.getDataBlock().minImpactSpeed += %increase;
       
       // Update that skill had been successfully cast
-      UseSkill(%client, $skill::NeutralCasting, true, true, 1, false);
+      // UseSkill(%client, $skill::NeutralCasting, true, true, 1, false);
       
       // Set end of skill to terminate bonuses, want to close it slightly before.
       %duration = $spelldata[%sdata, duration] - (1 * 1000);
@@ -1631,7 +1632,8 @@ function DoBoundSpellCast(%client, %spell, %sdata, %params)
       // Make sure an existing Bound isn't active.
       if (%client.BoundActive == true)
       {
-        return;
+           restoreMANA($spelldata[%sdata, Cost]);
+           return;
       }
       
       %client.BoundActive = true;
@@ -1649,7 +1651,7 @@ function DoBoundSpellCast(%client, %spell, %sdata, %params)
 
       
       // Update that skill had been successfully cast
-      UseSkill(%client, $skill::NeutralCasting, true, true, 1, false);
+      // UseSkill(%client, $skill::NeutralCasting, true, true, 1, false);
       
       // Set end of skill to terminate bonuses, want to close it slightly before.
       %duration = $spelldata[%sdata, duration] - (1 * 1000);

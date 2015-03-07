@@ -19,6 +19,18 @@ function refreshMANA(%client, %value)
 {
 	setMANA(%client, (fetchData(%client, "MANA") - %value));
 }
+
+// Positively increase mana and not worry about overrunning the maximum allowed.
+function restoreMANA(%client, %value)
+{
+    %maxMana = fetchData(%client, "MaxMANA");
+    %currentMana = fetchData(%client, "MANA");
+    if (%value + %currentMana > %maxMana)
+        setMANA(%client, %maxMana);
+    else
+        setMANA(%client, %currentMana + %value);
+}
+
 function refreshMANAREGEN(%client)
 {
 	if(isobject(%client) && isobject(%client.player))
