@@ -679,6 +679,7 @@ $SkillRestriction[transport] = $Skill::NeutralCasting @ " 200";
 $SkillRestriction[advtransport] = $Skill::NeutralCasting @ " 350";
 $SkillRestriction[masstransport] = $Skill::NeutralCasting @ " 650";
 $SkillRestriction[flow] = $Skill::NeutralCasting @ " 50";
+$SkillRestriction[bound] = $Skill::NeutralCasting @ " 100"; 
 
 $SkillRestriction[heal] = $Skill::DefensiveCasting @ " 10";
 $SkillRestriction[strongheal] = $Skill::DefensiveCasting @ " 80";
