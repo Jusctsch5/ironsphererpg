@@ -1601,6 +1601,7 @@ function DoFlowSpellCast(%client, %spell, %sdata, %params)
       %client.player.getDataBlock().maxUnderwaterForwardSpeed += %increase;
       %client.player.getDataBlock().maxUnderwaterBackwardSpeed += %increase;
       %client.player.getDataBlock().maxUnderwaterSideSpeed += %increase;
+      %client.player.getDataBlock().minImpactSpeed += %increase;
       
       // Update that skill had been successfully cast
       UseSkill(%client, $skill::NeutralCasting, true, true, 1, false);
@@ -1620,7 +1621,7 @@ function EndFlow(%client)
       %client.player.getDataBlock().maxUnderwaterForwardSpeed += %decrease;
       %client.player.getDataBlock().maxUnderwaterBackwardSpeed += %decrease;
       %client.player.getDataBlock().maxUnderwaterSideSpeed += %decrease;
-      
+      %client.player.getDataBlock().minImpactSpeed += %decrease;
       %client.flowActive = false;
 }
 
