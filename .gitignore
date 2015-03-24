@@ -8,3 +8,4 @@ prefs/
 # Exclude Java's object files
 *.dso
 *.cs.do
+.project
