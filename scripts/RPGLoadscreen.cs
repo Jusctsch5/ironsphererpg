@@ -35,7 +35,9 @@ function clientCmdRPGLoadscreen(%use)
 function clientCmdRPGLoadscreenTitle(%title)
 {
     RPGLoadingTitle.setValue("<just:center><font:Verdana Bold:30>Ironsphere RPG II\n" @ %title);
+    RPGShamelessPlug.setValue("<just:center><font:Verdana Bold:15>Please see https://github.com/Jusctsch5/ironsphererpg for more information.");
 }
+
 function createESCKeybind()
 {
     if (isObject(RPGLSMap))

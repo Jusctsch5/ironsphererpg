@@ -41,6 +41,22 @@ new GuiControl(RPGLoadingScreen) {
 		maxChars = "-1";
 		deniedSound = "InputDeniedSound";
 	};
+    new GuiMLTextCtrl(RPGShamelessPlug) {
+        profile = "ShellTextCenterProfile";
+        horizSizing = "center";
+        vertSizing = "height";
+        position = "-99 350";
+        extent = "837 58";
+        minExtent = "8 8";
+        visible = "1";
+        hideCursor = "0";
+        bypassHideCursor = "0";
+        helpTag = "0";
+        lineSpacing = "2";
+        allowColorChars = "0";
+        maxChars = "-1";
+        deniedSound = "InputDeniedSound";
+    };	
 	new GuiProgressCtrl(RPGLoadingProgress) {
 		profile = "ShellProgressBarProfile";
 		horizSizing = "center";
