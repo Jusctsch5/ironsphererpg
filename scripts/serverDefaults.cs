@@ -32,9 +32,9 @@ if ( isDemo() )
 }
 else
 {
-   $Host::GameName = "Tribes 2 Server";
-   $Host::Info = "This is a Tribes 2 Server.";
-   $Host::Map = "Katabatic";
+   $Host::GameName = "WilfCastle's Tribes 2 RPG";
+   $Host::Info = "Reboot of T2RPG Ironsphere II Mod.";
+   $Host::Map = "T2RPG World Map";
    $Host::MaxPlayers = 64;
 }
                   
