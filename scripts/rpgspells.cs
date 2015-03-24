@@ -541,13 +541,13 @@ $spelldata[AdvGuildTeleport, Skill] = $Skill::NeutralCasting;
 
 $spelldata[Flow, Image] = HealAuraEmitter2;
 $spelldata[Flow, DamageMod] = "";
-$spelldata[Flow, NumEffect] = "10";
+$spelldata[Flow, NumEffect] = "5";
 $spelldata[Flow, Test] = 1;
 $spelldata[Flow, Delay] = 1500;
 $spelldata[Flow, Element] = "Generic";
 $spelldata[Flow, RecoveryTime] = 4000;
 $spelldata[Flow, Type] = Emitter;
-$spelldata[Flow, cost] = 15; // should be 15
+$spelldata[Flow, cost] = 10; // 10
 $spelldata[Flow, Duration] = 60000;
 $spelldata[Flow, Special] = "Flow";
 $spelldata[Flow, Function] = "DoFlowSpellCast";
@@ -556,13 +556,13 @@ $spelldata[Flow, Skill] = $Skill::NeutralCasting;
 // Spelldata for Bound spell.
 $spelldata[Bound, Image] = HealAuraEmitter2;
 $spelldata[Bound, DamageMod] = "";
-$spelldata[Bound, NumEffect] = "1000";
+$spelldata[Bound, NumEffect] = "1300";
 $spelldata[Bound, Test] = 1;
 $spelldata[Bound, Delay] = 1500;
 $spelldata[Bound, Element] = "Generic";
 $spelldata[Bound, RecoveryTime] = 4000;
 $spelldata[Bound, Type] = Emitter;
-$spelldata[Bound, cost] = 20; // 20
+$spelldata[Bound, cost] = 15; // 15
 $spelldata[Bound, Duration] = 60000;
 $spelldata[Bound, Special] = "Bound";
 $spelldata[Bound, Function] = "DoBoundSpellCast";
@@ -1578,92 +1578,92 @@ function DoSpellGuildTeleportLOS(%client, %spell, %sdata, %params)
 
 function DoFlowSpellCast(%client, %spell, %sdata, %params)
 {
-      // Make sure an existing flow isn't active.
-      if (%client.flowActive == true)
-      {
-        restoreMANA($spelldata[%sdata, Cost]); 
+    // Make sure an existing flow isn't active.
+    if (%client.player.getDataBlock().flowActive == true)
+    {
+        restoreMANA(%client, $spelldata[%sdata, Cost]); 
         return;
-      }
-      
-      %client.flowActive = true;
-      
-      // Create the 'cast spell' image on the player
-      %pos = %client.player.getPosition();
-      %em = createEmitter(%pos, $spelldata[%sdata, Image], "0 0 0");
-      schedule(1000, 0, "removeExpo", %em);
-      
-      // Calculate the increase in speed based on the NeutralCasting proficency of the caster.
-      %client.flowIncrease = $spelldata[%sdata, numEffect] + (%client.data.PlayerSkill[$skill::NeutralCasting] / 20);
-      echo("Casting Flow, increasing speed by" SPC %client.flowIncrease);
-      %increase = %client.flowIncrease;
-      %client.player.getDataBlock().maxForwardSpeed += %increase;
-      %client.player.getDataBlock().maxBackwardSpeed += %increase;
-      %client.player.getDataBlock().maxSideSpeed += %increase;
-      %client.player.getDataBlock().maxUnderwaterForwardSpeed += %increase;
-      %client.player.getDataBlock().maxUnderwaterBackwardSpeed += %increase;
-      %client.player.getDataBlock().maxUnderwaterSideSpeed += %increase;
-      %client.player.getDataBlock().minImpactSpeed += %increase;
-      
-      // Update that skill had been successfully cast
-      // UseSkill(%client, $skill::NeutralCasting, true, true, 1, false);
-      
-      // Set end of skill to terminate bonuses, want to close it slightly before.
-      %duration = $spelldata[%sdata, duration] - (1 * 1000);
-      schedule(%duration, %client, "EndFlow", %client);
+    }
+    
+    %client.player.getDataBlock().flowActive = true;
+    
+    // Create the 'cast spell' image on the player
+    %pos = %client.player.getPosition();
+    %em = createEmitter(%pos, $spelldata[%sdata, Image], "0 0 0");
+    schedule(1000, 0, "removeExpo", %em);
+    
+    // Calculate the increase in speed.
+    %client.flowIncrease = $spelldata[%sdata, numEffect];
+    echo("Casting Flow, increasing speed by" SPC %client.flowIncrease SPC " from " SPC %client.player.getDataBlock().maxForwardSpeed);
+    %increase = %client.flowIncrease;
+    %client.player.getDataBlock().maxForwardSpeed += %increase;
+    %client.player.getDataBlock().maxBackwardSpeed += %increase;
+    %client.player.getDataBlock().maxSideSpeed += %increase;
+    %client.player.getDataBlock().maxUnderwaterForwardSpeed += %increase;
+    %client.player.getDataBlock().maxUnderwaterBackwardSpeed += %increase;
+    %client.player.getDataBlock().maxUnderwaterSideSpeed += %increase;
+    %client.player.getDataBlock().minImpactSpeed += %increase;
+    
+    // Set end of skill to terminate bonuses, want to close it slightly before.
+    %duration = $spelldata[%sdata, duration] - (1 * 1000);
+    schedule(%duration, %client, "EndFlow", %client);
 }
 function EndFlow(%client)
 {
-      echo("Flow ending, decreasing speed by" SPC %client.flowIncrease);
-      
-      %decrease = 0 - %client.flowIncrease;
-      %client.player.getDataBlock().maxForwardSpeed += %decrease;
-      %client.player.getDataBlock().maxBackwardSpeed += %decrease;
-      %client.player.getDataBlock().maxSideSpeed += %decrease;
-      %client.player.getDataBlock().maxUnderwaterForwardSpeed += %decrease;
-      %client.player.getDataBlock().maxUnderwaterBackwardSpeed += %decrease;
-      %client.player.getDataBlock().maxUnderwaterSideSpeed += %decrease;
-      %client.player.getDataBlock().minImpactSpeed += %decrease;
-      %client.flowActive = false;
+    if (%client.player.getDataBlock().flowActive == true)
+    {
+        echo("Flow ending, decreasing speed by" SPC %client.flowIncrease SPC " from " SPC %client.player.getDataBlock().maxForwardSpeed);
+        
+        %decrease = 0 - %client.flowIncrease;
+        %client.player.getDataBlock().maxForwardSpeed += %decrease;
+        %client.player.getDataBlock().maxBackwardSpeed += %decrease;
+        %client.player.getDataBlock().maxSideSpeed += %decrease;
+        %client.player.getDataBlock().maxUnderwaterForwardSpeed += %decrease;
+        %client.player.getDataBlock().maxUnderwaterBackwardSpeed += %decrease;
+        %client.player.getDataBlock().maxUnderwaterSideSpeed += %decrease;
+        %client.player.getDataBlock().minImpactSpeed += %decrease;
+        %client.player.getDataBlock().flowActive = false;
+    }
 }
 
 // For casting Bound
 function DoBoundSpellCast(%client, %spell, %sdata, %params)
 {
-      // Make sure an existing Bound isn't active.
-      if (%client.BoundActive == true)
-      {
-           restoreMANA($spelldata[%sdata, Cost]);
-           return;
-      }
-      
-      %client.BoundActive = true;
-      
-      // Create the 'cast spell' image on the player
-      %pos = %client.player.getPosition();
-      %em = createEmitter(%pos, $spelldata[%sdata, Image], "0 0 0");
-      schedule(1000, 0, "removeExpo", %em);
-      
-      // Calculate the increase in speed based on the NeutralCasting proficency of the caster.
-      %client.BoundIncrease = $spelldata[%sdata, numEffect] + (%client.data.PlayerSkill[$skill::NeutralCasting] * 2);
-      echo("Casting Bound, increasing jumping proficency by" SPC %client.BoundIncrease);
-      %increase = %client.BoundIncrease;
-      %client.player.getDataBlock().jumpForce += %increase;
-
-      
-      // Update that skill had been successfully cast
-      // UseSkill(%client, $skill::NeutralCasting, true, true, 1, false);
-      
-      // Set end of skill to terminate bonuses, want to close it slightly before.
-      %duration = $spelldata[%sdata, duration] - (1 * 1000);
-      schedule(%duration, %client, "EndBound", %client);
+    // Make sure an existing Bound isn't active.
+    if (%client.player.getDataBlock().BoundActive == true)
+    {
+        restoreMANA(%client, $spelldata[%sdata, Cost]);
+        return;
+    }
+  
+    %client.player.getDataBlock().BoundActive = true;
+  
+    // Create the 'cast spell' image on the player
+    %pos = %client.player.getPosition();
+    %em = createEmitter(%pos, $spelldata[%sdata, Image], "0 0 0");
+    schedule(1000, 0, "removeExpo", %em);
+    
+    // Calculate the increase in stat.
+    %client.BoundIncrease = $spelldata[%sdata, numEffect];
+    echo("Casting Bound, increasing jumping proficency by" SPC %client.BoundIncrease);
+    %increase = %client.BoundIncrease;
+    %client.player.getDataBlock().jumpForce += %increase;
+    %client.player.getDataBlock().minImpactSpeed += %increase;
+    
+    // Set end of skill to terminate bonuses, want to close it slightly before.
+    %duration = $spelldata[%sdata, duration] - (1 * 1000);
+    schedule(%duration, %client, "EndBound", %client);
 }
+
 function EndBound(%client)
 {
-      echo("Bound ending, decreasing speed by" SPC %client.BoundIncrease);
+    if (%client.player.getDataBlock().BoundActive == true)
+    {
+        echo("Bound ending, decreasing jumping proficency by" SPC %client.BoundIncrease SPC " from " SPC %client.player.getDataBlock().jumpForce);
       
-      %decrease = 0 - %client.BoundIncrease;
-      %client.player.getDataBlock().jumpForce += %decrease;
-
-      
-      %client.BoundActive = false;
+        %decrease = 0 - %client.BoundIncrease;
+        %client.player.getDataBlock().jumpForce += %decrease;
+        %client.player.getDataBlock().minImpactSpeed += %decrease;
+        %client.player.getDataBlock().BoundActive = false;
+    }
 }

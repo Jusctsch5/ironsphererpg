@@ -4,6 +4,8 @@ exec("shapes/base_male.cs");
 exec("shapes/mino.cs");
 //exec("shapes/fish.cs");  damn fish.
 //rpg's default armor for now
+
+
 datablock PlayerData(MaleHumanArmor) : LightPlayerDamageProfile
 {
 	emap = true;
@@ -72,13 +74,13 @@ datablock PlayerData(MaleHumanArmor) : LightPlayerDamageProfile
 	runForce = 48 * 120 *2;
 	runEnergyDrain = 0.005;
 	minRunEnergy = 0.0;
-	maxForwardSpeed = 20;
-	maxBackwardSpeed = 18;
-	maxSideSpeed = 18;
+	maxForwardSpeed = 10;
+	maxBackwardSpeed = 9;
+	maxSideSpeed = 9;
 
-	maxUnderwaterForwardSpeed = 15;
-	maxUnderwaterBackwardSpeed = 12;
-	maxUnderwaterSideSpeed = 12;
+	maxUnderwaterForwardSpeed = 6;
+	maxUnderwaterBackwardSpeed = 5.4;
+	maxUnderwaterSideSpeed = 5.4;
 
 	jumpForce = 6 * 90;
 	jumpEnergyDrain = 0;
@@ -193,6 +195,7 @@ datablock PlayerData(MaleHumanArmor) : LightPlayerDamageProfile
 	exitingWater         = ExitingWaterLightSound;
 
 	observeParameters = "0.5 4.5 4.5";
+
 };
 
 datablock PlayerData(DeathKnightArmor) : HeavyMaleHumanArmor
@@ -695,6 +698,9 @@ datablock PlayerData(MonsterArmor) : MaleHumanArmor
 	maxUnderwaterSideSpeed = 50.4;
 	runSurfaceAngle  = 85;
 	jumpSurfaceAngle = 80;
+	
+	flowActive = false;
+    boundActive = false;
 };
 datablock PlayerData(GnollArmor) : MonsterArmor
 {

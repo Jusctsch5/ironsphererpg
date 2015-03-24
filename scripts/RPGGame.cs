@@ -507,7 +507,7 @@ function RPGGame::createPlayer(%game, %client, %spawnLoc, %respawn)
 	{
 		case "MaleOrcArmor": echo("valid");
 		case "MaleHumanArmor":echo("valid");
-		default:echo("INVALID ARMOR! using server default");
+		default:echo("INVALID ARMOR - " SPC %armor SPC " - using server default.");
 		%armor = "MaleHumanArmor";
 	}
 	%client.armor = %armor;
