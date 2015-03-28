@@ -32,7 +32,7 @@ if ( isDemo() )
 }
 else
 {
-   $Host::GameName = "WilfCastle's Tribes 2 RPG";
+   $Host::GameName = "WilfCastle's T2RPG";
    $Host::Info = "Reboot of T2RPG Ironsphere II Mod.";
    $Host::Map = "T2RPG World Map";
    $Host::MaxPlayers = 64;
