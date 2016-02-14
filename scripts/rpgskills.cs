@@ -202,14 +202,14 @@ $SkillMultiplier[Cleric, $Skill::Haggling] = 1.0;
 $SkillMultiplier[Cleric, $Skill::Cleaving] = 0.5;
 $SkillMultiplier[Cleric, $Skill::IgniteArrow] = 0.4;
 $SkillMultiplier[Cleric, $Skill::Focus] = 1.5;
-$HPPerLvl[Cleric] = 0;
+$HPPerLvl[Cleric] = 1;
 $EXPmultiplier[Cleric] = 0.85;
 
 //--------------
 // Druid
 //--------------
-// Druids are good with Bludgeoning weapons and are somewhat familiar with spells.  They specialize in Neutral casting.
-// However they are also able to easily hide.
+// Druids are good with Slashing weapons and are somewhat familiar with spells.  They specialize in Neutral casting.
+// However they are also able to easily hide and are well versed in utility skills.
 
 //Primary Skill: Neutral Casting
 //Secondary Skill: Hiding, Slashing, Spell Resistance
@@ -238,7 +238,7 @@ $SkillMultiplier[Druid, $Skill::Haggling] = 1.3;
 $SkillMultiplier[Druid, $Skill::Cleaving] = 1.0;
 $SkillMultiplier[Druid, $Skill::IgniteArrow] = 0.5;
 $SkillMultiplier[Druid, $Skill::Focus] = 1.0;
-$HPPerLvl[Druid] = 1;
+$HPPerLvl[Druid] = 2;
 $EXPmultiplier[Druid] = 0.8;
 
 //--------------
@@ -381,7 +381,7 @@ $SkillMultiplier[Paladin, $Skill::Haggling] = 1.3;
 $SkillMultiplier[Paladin, $Skill::Cleaving] = 0.5;
 $SkillMultiplier[Paladin, $Skill::IgniteArrow] = 0.5;
 $SkillMultiplier[Paladin, $Skill::Focus] = 0.7;
-$HPPerLvl[Paladin] = 5;
+$HPPerLvl[Paladin] = 10;
 $EXPmultiplier[Paladin] = 1.0;
 
 //--------------
@@ -417,7 +417,7 @@ $SkillMultiplier[Ranger, $Skill::Haggling] = 0.7;
 $SkillMultiplier[Ranger, $Skill::Cleaving] = 0.5;
 $SkillMultiplier[Ranger, $Skill::IgniteArrow] = 1.8;
 $SkillMultiplier[Ranger, $Skill::Focus] = 0.1;
-$HPPerLvl[Ranger] = 10;
+$HPPerLvl[Ranger] = 7;
 $EXPmultiplier[Ranger] = 0.95;
 
 //--------------
@@ -448,7 +448,7 @@ $SkillMultiplier[Mage, $Skill::Endurance] = 0.5;
 $SkillMultiplier[Mage, $Skill::Mining] = 1.0;
 $SkillMultiplier[Mage, $Skill::Speech] = 1.5;
 $SkillMultiplier[Mage, $Skill::SenseHeading] = 0.1;
-$SkillMultiplier[Mage, $Skill::Energy] = 0.0;//not in
+$SkillMultiplier[Mage, $Skill::Energy] = 1.5;
 $SkillMultiplier[Mage, $Skill::Haggling] = 1.0;
 $SkillMultiplier[Mage, $Skill::Cleaving] = 0.1;
 $SkillMultiplier[Mage, $Skill::IgniteArrow] = 1.0;
