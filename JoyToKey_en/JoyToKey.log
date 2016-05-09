@@ -1,0 +1,30 @@
+2016/05/07 21:08:33.694 Info   Starting JoyToKey Ver5.8.2
+2016/05/07 21:08:33.694 Info   ExeFile=C:\Users\John\Games\JoyToKey_en\JoyToKey_en\JoyToKey.exe
+2016/05/07 21:08:33.694 Info   ConfigDir=C:\Users\John\Games\JoyToKey_en\JoyToKey_en\
+2016/05/07 21:08:33.694 Info   IniFile=C:\Users\John\Games\JoyToKey_en\JoyToKey_en\JoyToKey.ini
+2016/05/07 21:08:33.694 Info   Windows Version = 6.2
+2016/05/07 21:08:33.696 Info   Loaded VistaAPI.dll (Utils\Utils.cpp#217)
+2016/05/07 21:08:33.704 Info   LicenseKey "" is not valid
+2016/05/07 21:08:33.828 Info   Loading XInput1_3.dll (Joystick.cpp#126)
+2016/05/07 21:08:33.830 Info   Initialized XInput (Joystick.cpp#144)
+2016/05/07 21:08:33.849 Info   0 joysticks are detected (Joystick.cpp#166)
+2016/05/07 21:08:33.850 Info   ConfigDir=C:\Users\John\Games\JoyToKey_en\JoyToKey_en\*.cfg (ConfigFileManager.cpp#43)
+2016/05/07 21:08:33.857 Info   Failed to find AppLink.dat (AppLink\AppLinkManager.cpp#32)
+2016/05/07 21:08:33.914 Info   TimerInit: Initializing timer with x1 speed mode (interval = 16 msec)
+2016/05/07 21:09:24.074 Info   Detected a XI joystick: XInput-0
+2016/05/07 21:09:24.074 Info   Preferred index = -1
+2016/05/07 21:09:24.075 Info   DetectJoysticks: Detected 1 XI joystick(s)
+2016/05/07 21:09:25.317 Info   Detected a DI joystick: {0CD86D70-104F-11E6-8001-444553540000}, Controller (Gamepad F310), Controller (Gamepad F310)
+2016/05/07 21:09:25.317 Info   It is an XInput device, so skipping...
+2016/05/07 21:09:25.317 Info   Joystick #1: XInput Device #1
+2016/05/07 21:12:14.299 Error  Access is denied.
+ (Utils\Utils.cpp#464)
+2016/05/07 21:19:18.218 Error  Access is denied.
+ (Utils\Utils.cpp#464)
+2016/05/07 21:27:26.138 Error  Access is denied.
+ (Utils\Utils.cpp#464)
+2016/05/07 21:27:42.986 Error  Access is denied.
+ (Utils\Utils.cpp#464)
+2016/05/07 21:37:03.439 Error  Access is denied.
+ (Utils\Utils.cpp#464)
+2016/05/07 22:25:21.399 Info   Application terminated (Utils\LogFile.cpp#20)
