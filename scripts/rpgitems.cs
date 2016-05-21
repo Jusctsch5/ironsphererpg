@@ -5425,19 +5425,21 @@ function RPGGame::InventoryListOnSelect(%game, %client, %itemid)
         if ($SkillType[%game.GetItem(%client, %itemId)])
         {
             %info[5] = "Skill Type: " @ $SkillDesc[$SkillType[%game.GetItem(%client, %itemId)]];
+            %info[6] = "Skill Requirement: " @ GetWord($skillRestriction[%item], 1);
         }
         else
         {
             %info[5] = " ";
+            %info[6] = " ";
         }
         
-		%info[6] = "Amount: " @ %game.getitemCount(%client, %item, %prefix, %suffix);
+		%info[7] = "Amount: " @ %game.getitemCount(%client, %item, %prefix, %suffix);
 		if(%client.data.equipped[%itemid])
-		%info[7] = "Equipped: Yes";
+		%info[8] = "Equipped: Yes";
 		else
-		%info[7] = "Equipped: No";
+		%info[8] = "Equipped: No";
 
-		commandToClient(%client, 'InventoryListOnSelect', %info[1], %info[2], %info[3], %info[4], %info[5], %info[6], %info[7]);
+		commandToClient(%client, 'InventoryListOnSelect', %info[1], %info[2], %info[3], %info[4], %info[5], %info[6], %info[7], %info[8]);
 	}
 }
 function RPGGame::ShapeBasecycleWeapon(%game, %this, %data)
